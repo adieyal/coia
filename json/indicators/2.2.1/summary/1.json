@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Countdown/DHS/MICS/Other NS"}], "region": "African Region", "target": "Y", "indicator": "2.2.1", "scores": {"not_achieved_target": {"value": 68.0, "countries": 28}, "achieved_target": {"value": 22.0, "countries": 9}, "no_data": {"value": 10.0, "countries": 4}}}]

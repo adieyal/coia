@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Countdown/MICS"}, {"id": 2, "name": "Countdown/DHS"}], "region": "Western Pacific Region", "target": "Y", "indicator": "2.2.8", "scores": {"not_achieved_target": {"value": 57.0, "countries": 4}, "achieved_target": {"value": 0.0, "countries": 0}, "no_data": {"value": 43.0, "countries": 3}}}]

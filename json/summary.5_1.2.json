@@ -1,0 +1,1 @@
+{"sources": [{"id": 1, "name": "UNSD"}], "region": "Eastern Mediterranean Region", "target": "60", "indicator": "1.2", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 80.0, "countries": 8}, "no_data": {"value": 20.0, "countries": 2}}}

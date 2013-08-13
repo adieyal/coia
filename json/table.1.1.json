@@ -1,0 +1,84 @@
+{
+"region" : "African Region-2",
+"indicator" : "Indicator 1.1",
+"target" : 75,
+"data":
+[ {
+"country" : "Angola",
+"rating" : "tick",
+"score" : 81,
+"source" : 1
+}, {
+"country" : "Benin",
+"rating" : "missing",
+"score" : null,
+"source" : 3
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "New Zealand",
+"rating" : "tick",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}, {
+"country" : "Botswana",
+"rating" : "cross",
+"score" : 23,
+"source" : 2
+}
+],
+"sources" : [ {
+"id" : 1,
+"name" : "Country cycle planning database"
+}, {
+"id" : 2,
+"name" : "CAF"
+}, {
+"id" : 3,
+"name" : "MICS 2003/ChildInfo-5"
+}
+]
+}

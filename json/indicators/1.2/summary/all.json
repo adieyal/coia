@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "UNSD"}], "region": "All regions", "target": "60", "indicator": "1.2", "scores": {"not_achieved_target": {"value": 77.0, "countries": 58}, "achieved_target": {"value": 15.0, "countries": 11}, "no_data": {"value": 8.0, "countries": 6}}}]

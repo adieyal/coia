@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "World Health Statistics 2012"}], "region": "Region of the Americas", "target": "60", "indicator": "1.5", "scores": {"not_achieved_target": {"value": 17.0, "countries": 1}, "achieved_target": {"value": 67.0, "countries": 4}, "no_data": {"value": 17.0, "countries": 1}}}]

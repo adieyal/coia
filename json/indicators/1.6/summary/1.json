@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Measure DHS"}, {"id": 2, "name": "WHO/MCA"}], "region": "African Region", "target": "60", "indicator": "1.6", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 0.0, "countries": 0}, "no_data": {"value": 100.0, "countries": 41}}}]

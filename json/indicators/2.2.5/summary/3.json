@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Countdown/DHS/MICS/Other NS"}], "region": "South-East Asia Region", "target": "Y", "indicator": "2.2.5", "scores": {"not_achieved_target": {"value": 50.0, "countries": 3}, "achieved_target": {"value": 17.0, "countries": 1}, "no_data": {"value": 33.0, "countries": 2}}}]

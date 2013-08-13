@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "CAF"}], "region": "Western Pacific Region", "target": "Y", "indicator": "1.7.1", "scores": {"not_achieved_target": {"value": 57.0, "countries": 4}, "achieved_target": {"value": 43.0, "countries": 3}, "no_data": {"value": 0.0, "countries": 0}}}]

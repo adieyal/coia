@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "CAF"}], "region": "African Region", "target": "Y", "indicator": "1.7", "scores": {"not_achieved_target": {"value": 88.0, "countries": 36}, "achieved_target": {"value": 12.0, "countries": 5}, "no_data": {"value": 0.0, "countries": 0}}}]

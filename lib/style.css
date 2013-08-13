@@ -1,0 +1,402 @@
+html, body { margin:0; padding:0; }
+
+#dashboard {
+    width:95%;
+    min-height:650px;
+    min-width:900px;
+    margin:auto;
+    font-family: 'ArialMT', 'Arial', 'Sans';
+    font-size:8px;
+
+}
+.source {
+    font-size:6px;
+    text-align:center;
+    padding-top:2px;
+    color:#58595B;
+    font-family:'Arial-ItalicMT';
+}
+/* COIA Icons */
+.icon-cross circle{
+    fill:#ed1c24;
+}
+.coia-icon line{
+    stroke:#fff;
+    stroke-width:2;
+}
+
+.coia-icon path{
+    fill:#fff;
+}
+.icon-question circle {
+    fill:#ffde17;
+}
+.icon-tick circle{
+    fill:#8dc63f;
+}
+
+
+#data-chart circle.parent {
+    fill-opacity: 0;
+    stroke-width: 1px;
+}
+
+
+#data-chart circle.leaf {
+    fill-opacity: 0.3;
+    stroke: #888;
+    cursor: pointer
+}
+
+
+#data-chart circle.leaf:hover{
+    fill-opacity: 0.65;
+}
+
+#data-chart text.indicator {
+    cursor: pointer;
+}
+
+/* Button Hover Styles */
+g.button rect {
+    fill:#E6E7E8;
+}
+g.button text{
+    fill:#58595B;
+    font-family:'Arial-MT';
+    font-size:8px;
+}
+g.button:hover  rect{
+    fill:#DF7627;
+    cursor:pointer;
+}
+g.button:hover  text{
+    fill:#fff;
+    cursor:pointer;
+    font-family:'Arial-BoldMT'
+}
+
+g.indicator_button rect{
+    fill: #58595B;
+    font-family:'Arial-MT'
+}
+
+g.indicator_button text{
+    font-family:'Arial-MT'
+}
+
+g.indicator_button:hover rect{
+    fill: #DF7627;
+    cursor:pointer;
+}
+g.indicator_button:hover text{
+    cursor:pointer;
+}
+g.indicator_selected rect{
+    fill:#DF7627 !important;
+}
+g.indicator_selected text{
+    font-family:'Arial-BoldMT' !important;
+}
+
+g.selected rect{
+    fill:#DF7627;
+}
+g.selected text{
+    fill:#fff;
+    font-family:'Arial-BoldMT'
+}
+
+g.countries text {
+    font-family:'Arial-MT';
+    font-size:10px;
+    fill:#58595B;
+}
+
+g.countries text:hover{
+    fill:#DF7627;
+    cursor:pointer;
+}
+
+g.indicators text{
+    font-family: 'Arial-MT';
+    font-size: 8px;
+    fill:#58595B;
+}
+g.indicators text.selected, g.indicators text:hover{
+    font-family:'Arial-BoldMT' !important;
+    fill:#DF7627 !important;
+    cursor:pointer;
+}
+
+g.dashboard_button text{
+    fill: #fff;
+}
+
+.dashboard_button:hover{
+    cursor: pointer;
+}
+g.dashboard_button:hover text{
+    fill:#DF7627;
+    cursor: pointer;
+}
+
+.description div {
+    color:#58595B;
+    font-family:'Arial-MT';
+    font:7.5px;
+}
+.spg-arc-text{
+    display:none;
+}
+.aggregate .spg-arc{
+    stroke:#F1F2F2 !important;
+}
+/**
+ Summary Widget
+**/
+.spg-arc-text{
+            display:none;
+}
+
+.summary-header rect {
+    fill: #6caddf;
+}
+.summary-header text {
+    fill: #fff;
+}
+.summary-border {
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+.summary-graph-header rect{
+    fill:#808285;
+}
+.summary-graph-header text{
+    fill: #fff;
+}
+
+rect.summary-background  {
+    fill:#F1F2F2;
+}
+circle.summary-background {
+    fill: #fff;
+    stroke:#a1a3a6;
+    stroke-width:0.5;
+    stroke-miterlimit:10;
+}
+line.summary-background {
+    stroke: #a1a3a6;
+    stroke-width:0.3;
+}
+
+rect.summary-background-data {
+    fill:#D1D3D4;
+}
+
+.summary-background text{
+    font-size:4.5px;
+    fill:#58595b;
+}
+tspan.summary-country-count {
+    font-size:9px;
+    font-family:'Arial-BoldMT' ;
+}
+
+text.summary-country-percent {
+    font-size:12px;
+    font-family:'Arial-BoldMT' ;
+}
+
+text.okdata-percent{
+    fill:#8DC63F;
+}
+
+text.faildata-percent{
+    fill:#ED1C24;
+}
+text.nodata-percent {
+    fill:#FFDE17;
+}
+rect.summary-source {
+    fill: #fff;
+    stroke:#e6e7e8;
+    stroke-width:1;
+}
+
+.summary-source text{
+    fill:#58595B;
+    font-family:'Arial-ItalicMT';
+    font-size:4px;
+}
+.summary-target text {
+    fill:#114A8A;
+    font-size:5px;
+}
+
+.summary-target text.target {
+    font-family:'Arial-BoldMT' ;
+    font-size:12px;
+}
+
+/**
+ Box & Whisker Style
+**/
+
+
+.bw-border {
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+.bw-header rect {
+    fill:#6CADDF;
+}
+
+.bw-header text {
+    fill: #fff;
+    font-family:'Arial-BoldMT';
+    font-size:12;
+}
+
+.bw-description {
+    fill:#58595B; font-family:'Arial-ItalicMT'; font-size:7;
+}
+
+.bw-axis text{
+    fill:#58595B; font-family:'ArialMT'; font-size:8;
+}
+.bw-axis line{
+    stroke:#58595B;
+    stroke-miterlimit:10;
+}
+.bw-source rect{
+    fill: #fff;
+    stroke:#e6e7e8;
+    stroke-width:1;
+}
+
+.bw-source text{
+    fill:#58595B;
+    font-family:'Arial-ItalicMT';
+    font-size:4px;
+}
+
+.bw-rect{
+    fill: #ccc;
+}
+.bw-line{
+    stroke:#333;
+    fill: #ccc;
+}
+
+.bw-upper{
+    fill: #6caddf;
+}
+
+.bw-lower{
+    fill: #114a8a;
+}
+
+.bw-constant-line {
+    stroke-dasharray: 2;
+    stroke-width:1 !important;
+}
+
+/**
+ Table Widget Style
+ **/
+
+.tw-border {
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+.tw-title {
+    fill:#79317F; font-family:'HelveticaNeue-Light'; font-size:13;
+}
+.tw-header-text:hover{
+    cursor: pointer;
+    fill:#DF7627;
+}
+.tw-header-line, line.tw-background {
+
+    stroke:#595A5C;
+    stroke-width:0.25;
+}
+rect.tw-background {
+    fill:#F2F2F2;
+}
+
+rect.tw-row  {
+    fill:#F2F2F2;
+    stroke:#595A5C;
+    stroke-width:0.25;
+}
+
+.tw-source rect{
+    fill: #fff;
+    stroke:#e6e7e8;
+    stroke-width:1;
+}
+
+.tw-source text{
+    fill:#58595B;
+    font-family:'Arial-ItalicMT';
+    font-size:4px;
+}
+
+/**
+ Absolute graph widget
+*/
+
+.aw-border {
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+
+.aw-indicators {
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+
+.aw-source rect{
+    stroke: #e6e7e8;
+    stroke-width: 1px;
+    fill: none;
+}
+
+.aw-source text{
+    fill:#58595B;
+    font-family:'Arial-ItalicMT';
+    font-size:4px;
+}
+
+.aw-line{
+    stroke:#333;
+    fill: #ccc;
+}
+
+.rb-bar-text {
+    display:none;
+}
+
+.rb-bar {
+    fill:#6CADDF;
+}
+
+.rb-series-text {
+    fill:#58595B; font-family:'ArialMT'; font-size:8;
+}
+
+.rb-constant-line {
+    stroke-dasharray: 2;
+    stroke-width:1 !important;
+}
+
+div.summary {
+    padding-top:4px;
+}

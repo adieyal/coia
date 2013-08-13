@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>CIOA - SVG</title>
+    <script type='text/javascript' src='lib/d3-graph/d3.v2.min.js'></script>
+    <script type='text/javascript' src='lib/d3-graph/boxwhisker.js'></script>
+        <script type='text/javascript' src='lib/d3-graph/roundedbargraph.js'></script>
+    <script type='text/javascript' src='lib/coia.js'></script>
+    <script type='text/javascript' src='lib/summary.js'></script>
+    <script type='text/javascript' src='lib/boxwhisker.js'></script>
+        <script type='text/javascript' src='lib/table.js'></script>
+        <script type='text/javascript' src='lib/absolute.js'></script>
+    <link rel="stylesheet" href="lib/style.css" type="text/css" />
+    <style>
+
+
+        body{
+            background-color:#fefefe;
+            font-family:'Droid Sans';
+            font-size:8px;
+        }
+
+
+
+
+text {
+    font: 10px sans-serif;
+}
+
+
+    </style>
+
+</head>
+<body style="">
+
+    <svg id="svg" width="1000" height="600" > <g id="data-chart" transform="translate(5,5)"></g></svg>
+
+    <br />
+     <a href="#" id="change_data">Change Data</a>
+<script>
+
+d3.selectAll('#change_data').on('click', function(d){
+    COIA.regions.current ++;
+    if (COIA.regions.current > 6){
+        COIA.regions.current = 0;
+    }
+    COIA.build_data_chart();
+})
+
+var dashboard = d3.select('#svg');
+d3.json('json/init.json', function(json){
+    COIA.init(json);
+    COIA.regions.current = 0;
+    COIA.build_data_chart();
+});
+
+
+/*
+
+
+var vis = d3.select("#svg").append("svg")
+    .attr("width", width + 100)
+    .attr("height", height)
+    .attr("class", "pack")
+    .append("g")
+    .attr("transform", "translate(2, 2)");
+
+function build_chart(){
+    var fill = ['#0093d5', '#f1b821', '#009983','#cf3d96', '#df7627', '#252', '#528', '#72f', '#444'];
+    var data = filter_data_indicators();
+
+    var circles = vis.data([data]).selectAll('circle').data(pack.nodes);
+    circles.enter().append("circle")
+        .attr('class', function(d) { return d.countries.length === 0 ? 'parent' : 'leaf'; })
+        .attr("r", function(d) { return d.r * 0.95; })
+        .attr('fill', function(d){ return fill[parseInt(d.indicator.substring(0,1), 0)  ]; })
+        .attr('cx', function(d) { return d.x; })
+        .attr('cy', function(d) { return d.y; });
+
+    circles
+        .transition()
+        .duration(COIA.transition_time)
+        .attr('r', function(d) { return d.r * 0.95; })
+        .attr('cx', function(d) { return d.x; })
+        .attr('cy', function(d) { return d.y; });
+
+
+    var text = vis.data([data]).selectAll('text.indicator').data(pack.nodes);
+
+    text.enter().append('text')
+        .attr('x', function(d) { return d.x; })
+        .attr('y', function(d) { return d.y; })
+        .attr("text-anchor", "middle")
+        .attr('class', 'indicator')
+        .attr("dy", ".3em")
+        .text(function(d) { return d.indicator; });
+
+    text.transition()
+        .duration(COIA.transition_time)
+        .attr('x', function(d) { return d.x; })
+        .attr('y', function(d) { return d.y; })
+                .text(function(d) { if (d.countries.length === 0) { return ''; } return d.indicator; });
+
+    text.exit().remove();
+
+    var indicator_click = function(d,i){
+        console.log(d, i)
+    }
+
+    circles.on('click', indicator_click);
+    text.on('click', indicator_click);
+};
+
+
+var results = 8;
+for (var i =0; i < results; i++){
+    var indicator = i + 1;
+    var data_url = 'json/target/' + indicator +'/all.json';
+    console.log(data_url);
+
+    d3.json(data_url, function(o){
+        results --;
+        for (var i =0; i < o.indicators.length; i++){
+            var ind = o.indicators[i];
+
+            var count = 0;
+            for (var c = ind.countries.length - 1; c >= 0; c--){
+                var country = ind.countries[c];
+                if (country.rating != 'missing'){
+                    ind.countries.splice(c, 1);
+                }
+            }
+        }
+
+        COIA.data.raw = COIA.data.raw.concat(o.indicators);
+
+        console.log(results)
+        if (results == 0){
+            COIA.data.raw = COIA.data.raw.sort(indicator_sort);
+            COIA.regions.current = 0;
+            build_chart();
+        }
+    })
+}
+
+function filter_data_indicators(){
+    var region = COIA.regions.current;
+    console.log(region);
+    var raw = COIA.data.raw;
+    var output = {'indicator':'', 'children':[], 'countries':''};
+    for (var i =0; i < raw.length; i++){
+        var r = raw[i];
+        var obj = {'countries':[], 'indicator': r.indicator};
+        for (var c = 0; c < r.countries.length; c++){
+            var country = r.countries[c];
+            var c_region = COIA.get_country_region(country.name);
+            if (c_region !== region){
+                obj.countries.push(country.name);
+            }
+        }
+        output.children.push(obj);
+    }
+    return output;
+
+}
+*/
+function indicator_sort(a, b){
+    if (a.indicator > b.indicator ){
+        return 1;
+    } else if (b.indicator > a.indicator) {
+        return -1
+    }
+    return 0;
+}
+
+
+    </script>
+</body>

@@ -1,0 +1,1678 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <title>ValueError at /indicators/1.6/aggregate/json/</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    code, pre { font-size: 100%; }
+    table { border:1px solid #ccc; border-collapse: collapse; width:100%; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th { padding:1px 6px 1px 3px; background:#fefefe; text-align:left; font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%; }
+    table td.code pre { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td { font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { padding-bottom:1em; }
+    div.context { padding:10px 0; overflow:hidden; }
+    div.context ol { padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li { font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol li pre { display:inline; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { position:absolute; right:32px; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #unicode-hint { background:#eee; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+    h2 span.commands { font-size:.7em;}
+    span.commands a:link {color:#5E5694;}
+    pre.exception_value { font-family: sans-serif; color: #666; font-size: 1.5em; margin: 10px 0 10px 0; }
+  </style>
+  
+  <script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon; Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\-");
+        var oRegExp = new RegExp("(^|\s)" + strClassName + "(\s|$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+      hideAll(getElementsByClassName(document, 'div', 'pastebin'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    function switchPastebinFriendly(link) {
+      s1 = "Switch to copy-and-paste view";
+      s2 = "Switch back to interactive view";
+      link.innerHTML = link.innerHTML == s1 ? s2 : s1;
+      toggle('browserTraceback', 'pastebinTraceback');
+      return false;
+    }
+    //-->
+  </script>
+  
+</head>
+<body>
+<div id="summary">
+  <h1>ValueError at /indicators/1.6/aggregate/json/</h1>
+  <pre class="exception_value">could not convert string to float: MCH</pre>
+  <table class="meta">
+
+    <tr>
+      <th>Request Method:</th>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <th>Request URL:</th>
+      <td>http://coia.webfactional.com/indicators/1.6/aggregate/json/?region=1</td>
+    </tr>
+
+    <tr>
+      <th>Django Version:</th>
+      <td>1.3.1</td>
+    </tr>
+
+    <tr>
+      <th>Exception Type:</th>
+      <td>ValueError</td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Value:</th>
+      <td><pre>could not convert string to float: MCH</pre></td>
+    </tr>
+
+
+    <tr>
+      <th>Exception Location:</th>
+      <td>/home/coia/webapps/ierg/django-scorecard-processor/ierg/ierg_results/utils.py in calc_values, line 23</td>
+    </tr>
+
+    <tr>
+      <th>Python Executable:</th>
+      <td>/usr/local/bin/python</td>
+    </tr>
+    <tr>
+      <th>Python Version:</th>
+      <td>2.7.3</td>
+    </tr>
+    <tr>
+      <th>Python Path:</th>
+      <td><pre>[&#39;/home/coia/webapps/ierg/django-scorecard-processor&#39;,
+ &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg&#39;,
+ &#39;/home/coia/webapps/ierg/lib/python2.7&#39;,
+ &#39;/home/coia/lib/python2.7/pip-1.1-py2.7.egg&#39;,
+ &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/src/bootstrap&#39;,
+ &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/src/cerial&#39;,
+ &#39;/home/coia/lib/python2.7&#39;,
+ &#39;/usr/local/lib/python27.zip&#39;,
+ &#39;/usr/local/lib/python2.7&#39;,
+ &#39;/usr/local/lib/python2.7/plat-linux2&#39;,
+ &#39;/usr/local/lib/python2.7/lib-tk&#39;,
+ &#39;/usr/local/lib/python2.7/lib-old&#39;,
+ &#39;/usr/local/lib/python2.7/lib-dynload&#39;,
+ &#39;/usr/local/lib/python2.7/site-packages&#39;,
+ &#39;/usr/local/lib/python2.7/site-packages/PIL&#39;]</pre></td>
+    </tr>
+    <tr>
+      <th>Server time:</th>
+      <td>Thu, 5 Jul 2012 12:27:03 +0200</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<div id="traceback">
+  <h2>Traceback <span class="commands"><a href="#" onclick="return switchPastebinFriendly(this);">Switch to copy-and-paste view</a></span></h2>
+  
+  <div id="browserTraceback">
+    <ul class="traceback">
+      
+        <li class="frame">
+          <code>/home/coia/webapps/ierg/lib/python2.7/django/core/handlers/base.py</code> in <code>get_response</code>
+
+          
+            <div class="context" id="c139955477192216">
+              
+                <ol start="104" class="pre-context" id="pre139955477192216"><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                    for middleware_method in self._view_middleware:</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        response = middleware_method(request, callback, callback_args, callback_kwargs)</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        if response:</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                            break</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre></pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                if response is None:</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                    try:</pre></li></ol>
+              
+              <ol start="111" class="context-line"><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        response = callback(request, *callback_args, **callback_kwargs)</pre> <span>...</span></li></ol>
+              
+                <ol start='112' class="post-context" id="post139955477192216"><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                    except Exception, e:</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        # If the view raised an exception, run it through exception</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        # middleware, and if the exception middleware returns a</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        # response, use that. Otherwise, reraise the exception.</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                        for middleware_method in self._exception_middleware:</pre></li><li onclick="toggle('pre139955477192216', 'post139955477192216')"><pre>                            response = middleware_method(request, e)</pre></li></ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '139955477192216')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v139955477192216">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>exceptions</td>
+                    <td class="code"><pre>&lt;module &#39;django.core.exceptions&#39; from &#39;/home/coia/webapps/ierg/lib/python2.7/django/core/exceptions.pyc&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>e</td>
+                    <td class="code"><pre>ValueError(&#39;could not convert string to float: MCH&#39;,)</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_args</td>
+                    <td class="code"><pre>()</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>receivers</td>
+                    <td class="code"><pre>[(&lt;function _rollback_on_exception at 0x7f49f47e7578&gt;, None)]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>middleware_method</td>
+                    <td class="code"><pre>&lt;bound method CsrfViewMiddleware.process_view of &lt;django.middleware.csrf.CsrfViewMiddleware object at 0x7f49f46b6490&gt;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>self</td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f49f469add0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>settings</td>
+                    <td class="code"><pre>&lt;django.conf.LazySettings object at 0x7f49f43b8250&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest
+GET:&lt;QueryDict: {u&#39;region&#39;: [u&#39;1&#39;]}&gt;,
+POST:&lt;QueryDict: {}&gt;,
+COOKIES:{},
+META:{&#39;CSRF_COOKIE&#39;: &#39;ec5227afbdf77ff94ea4698baa3cf414&#39;,
+ &#39;DOCUMENT_ROOT&#39;: &#39;/usr/local/apache2/htdocs&#39;,
+ &#39;GATEWAY_INTERFACE&#39;: &#39;CGI/1.1&#39;,
+ &#39;HTTP_ACCEPT&#39;: &#39;*/*&#39;,
+ &#39;HTTP_ACCEPT_ENCODING&#39;: &#39;identity, deflate, compress, gzip&#39;,
+ &#39;HTTP_CACHE_CONTROL&#39;: &#39;max-stale=0&#39;,
+ &#39;HTTP_CONNECTION&#39;: &#39;close&#39;,
+ &#39;HTTP_HOST&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_HTTPS&#39;: &#39;off&#39;,
+ &#39;HTTP_HTTP_X_FORWARDED_PROTO&#39;: &#39;http&#39;,
+ &#39;HTTP_USER_AGENT&#39;: &#39;python-requests/0.11.1&#39;,
+ &#39;HTTP_X_FORWARDED_FOR&#39;: &#39;118.93.33.189&#39;,
+ &#39;HTTP_X_FORWARDED_HOST&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_X_FORWARDED_PROTO&#39;: &#39;http&#39;,
+ &#39;HTTP_X_FORWARDED_SERVER&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_X_FORWARDED_SSL&#39;: &#39;off&#39;,
+ &#39;PATH_INFO&#39;: u&#39;/indicators/1.6/aggregate/json/&#39;,
+ &#39;PATH_TRANSLATED&#39;: &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi/indicators/1.6/aggregate/json/&#39;,
+ &#39;QUERY_STRING&#39;: &#39;region=1&#39;,
+ &#39;REMOTE_ADDR&#39;: &#39;127.0.0.1&#39;,
+ &#39;REMOTE_PORT&#39;: &#39;48133&#39;,
+ &#39;REQUEST_METHOD&#39;: &#39;GET&#39;,
+ &#39;REQUEST_URI&#39;: &#39;/indicators/1.6/aggregate/json/?region=1&#39;,
+ &#39;SCRIPT_FILENAME&#39;: &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi&#39;,
+ &#39;SCRIPT_NAME&#39;: u&#39;&#39;,
+ &#39;SERVER_ADDR&#39;: &#39;127.0.0.1&#39;,
+ &#39;SERVER_ADMIN&#39;: &#39;[no address given]&#39;,
+ &#39;SERVER_NAME&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;SERVER_PORT&#39;: &#39;80&#39;,
+ &#39;SERVER_PROTOCOL&#39;: &#39;HTTP/1.0&#39;,
+ &#39;SERVER_SIGNATURE&#39;: &#39;&#39;,
+ &#39;SERVER_SOFTWARE&#39;: &#39;Apache/2.2.17 (Unix) mod_wsgi/3.3 Python/2.7.3&#39;,
+ &#39;mod_wsgi.application_group&#39;: &#39;web311.webfaction.com|&#39;,
+ &#39;mod_wsgi.callable_object&#39;: &#39;application&#39;,
+ &#39;mod_wsgi.handler_script&#39;: &#39;&#39;,
+ &#39;mod_wsgi.input_chunked&#39;: &#39;0&#39;,
+ &#39;mod_wsgi.listener_host&#39;: &#39;&#39;,
+ &#39;mod_wsgi.listener_port&#39;: &#39;29037&#39;,
+ &#39;mod_wsgi.process_group&#39;: &#39;ierg&#39;,
+ &#39;mod_wsgi.request_handler&#39;: &#39;wsgi-script&#39;,
+ &#39;mod_wsgi.script_reloading&#39;: &#39;1&#39;,
+ &#39;mod_wsgi.version&#39;: (3, 3),
+ &#39;wsgi.errors&#39;: &lt;mod_wsgi.Log object at 0x7f49f50a00b0&gt;,
+ &#39;wsgi.file_wrapper&#39;: &lt;built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f49f50a2468&gt;,
+ &#39;wsgi.input&#39;: &lt;mod_wsgi.Input object at 0x7f49f50a0db0&gt;,
+ &#39;wsgi.multiprocess&#39;: True,
+ &#39;wsgi.multithread&#39;: True,
+ &#39;wsgi.run_once&#39;: False,
+ &#39;wsgi.url_scheme&#39;: &#39;http&#39;,
+ &#39;wsgi.version&#39;: (1, 1)}&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback</td>
+                    <td class="code"><pre>&lt;function aggregate at 0x7f49f50158c0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>resolver</td>
+                    <td class="code"><pre>&lt;RegexURLResolver ierg.urls (None:None) ^/&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>urlresolvers</td>
+                    <td class="code"><pre>&lt;module &#39;django.core.urlresolvers&#39; from &#39;/home/coia/webapps/ierg/lib/python2.7/django/core/urlresolvers.pyc&#39;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>callback_kwargs</td>
+                    <td class="code"><pre>{&#39;indicator&#39;: u&#39;1.6&#39;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>response</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>urlconf</td>
+                    <td class="code"><pre>&#39;ierg.urls&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        <li class="frame">
+          <code>/home/coia/webapps/ierg/django-scorecard-processor/ierg/ierg_results/views.py</code> in <code>aggregate</code>
+
+          
+            <div class="context" id="c139955477191352">
+              
+                <ol start="86" class="pre-context" id="pre139955477191352"><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>        score_items = []</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>        for value in values:</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            loads_value = simplejson.loads(value[&#39;value&#39;])</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            vkeys = [key for key in loads_value.keys() if key.startswith(&#39;Value&#39;)]</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            vkeys.sort()</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            score_item = None</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            for key in vkeys:</pre></li></ol>
+              
+              <ol start="93" class="context-line"><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>                score_key = calc_values(loads_value.get(key))</pre> <span>...</span></li></ol>
+              
+                <ol start='94' class="post-context" id="post139955477191352"><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>                if score_key is not None and score_key != &#39;&#39;:</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>                    score_item = score_key</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>            if score_item is not None:</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>                score_items.append(score_item)</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>        score = None</pre></li><li onclick="toggle('pre139955477191352', 'post139955477191352')"><pre>        if len(score_items):</pre></li></ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '139955477191352')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v139955477191352">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>indicator</td>
+                    <td class="code"><pre>u&#39;1.6&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>score_key</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>key</td>
+                    <td class="code"><pre>u&#39;Value 1&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>region_id</td>
+                    <td class="code"><pre>u&#39;1&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sub_indicators</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>score_item</td>
+                    <td class="code"><pre>None</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>request</td>
+                    <td class="code"><pre>&lt;WSGIRequest
+GET:&lt;QueryDict: {u&#39;region&#39;: [u&#39;1&#39;]}&gt;,
+POST:&lt;QueryDict: {}&gt;,
+COOKIES:{},
+META:{&#39;CSRF_COOKIE&#39;: &#39;ec5227afbdf77ff94ea4698baa3cf414&#39;,
+ &#39;DOCUMENT_ROOT&#39;: &#39;/usr/local/apache2/htdocs&#39;,
+ &#39;GATEWAY_INTERFACE&#39;: &#39;CGI/1.1&#39;,
+ &#39;HTTP_ACCEPT&#39;: &#39;*/*&#39;,
+ &#39;HTTP_ACCEPT_ENCODING&#39;: &#39;identity, deflate, compress, gzip&#39;,
+ &#39;HTTP_CACHE_CONTROL&#39;: &#39;max-stale=0&#39;,
+ &#39;HTTP_CONNECTION&#39;: &#39;close&#39;,
+ &#39;HTTP_HOST&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_HTTPS&#39;: &#39;off&#39;,
+ &#39;HTTP_HTTP_X_FORWARDED_PROTO&#39;: &#39;http&#39;,
+ &#39;HTTP_USER_AGENT&#39;: &#39;python-requests/0.11.1&#39;,
+ &#39;HTTP_X_FORWARDED_FOR&#39;: &#39;118.93.33.189&#39;,
+ &#39;HTTP_X_FORWARDED_HOST&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_X_FORWARDED_PROTO&#39;: &#39;http&#39;,
+ &#39;HTTP_X_FORWARDED_SERVER&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;HTTP_X_FORWARDED_SSL&#39;: &#39;off&#39;,
+ &#39;PATH_INFO&#39;: u&#39;/indicators/1.6/aggregate/json/&#39;,
+ &#39;PATH_TRANSLATED&#39;: &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi/indicators/1.6/aggregate/json/&#39;,
+ &#39;QUERY_STRING&#39;: &#39;region=1&#39;,
+ &#39;REMOTE_ADDR&#39;: &#39;127.0.0.1&#39;,
+ &#39;REMOTE_PORT&#39;: &#39;48133&#39;,
+ &#39;REQUEST_METHOD&#39;: &#39;GET&#39;,
+ &#39;REQUEST_URI&#39;: &#39;/indicators/1.6/aggregate/json/?region=1&#39;,
+ &#39;SCRIPT_FILENAME&#39;: &#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi&#39;,
+ &#39;SCRIPT_NAME&#39;: u&#39;&#39;,
+ &#39;SERVER_ADDR&#39;: &#39;127.0.0.1&#39;,
+ &#39;SERVER_ADMIN&#39;: &#39;[no address given]&#39;,
+ &#39;SERVER_NAME&#39;: &#39;coia.webfactional.com&#39;,
+ &#39;SERVER_PORT&#39;: &#39;80&#39;,
+ &#39;SERVER_PROTOCOL&#39;: &#39;HTTP/1.0&#39;,
+ &#39;SERVER_SIGNATURE&#39;: &#39;&#39;,
+ &#39;SERVER_SOFTWARE&#39;: &#39;Apache/2.2.17 (Unix) mod_wsgi/3.3 Python/2.7.3&#39;,
+ &#39;mod_wsgi.application_group&#39;: &#39;web311.webfaction.com|&#39;,
+ &#39;mod_wsgi.callable_object&#39;: &#39;application&#39;,
+ &#39;mod_wsgi.handler_script&#39;: &#39;&#39;,
+ &#39;mod_wsgi.input_chunked&#39;: &#39;0&#39;,
+ &#39;mod_wsgi.listener_host&#39;: &#39;&#39;,
+ &#39;mod_wsgi.listener_port&#39;: &#39;29037&#39;,
+ &#39;mod_wsgi.process_group&#39;: &#39;ierg&#39;,
+ &#39;mod_wsgi.request_handler&#39;: &#39;wsgi-script&#39;,
+ &#39;mod_wsgi.script_reloading&#39;: &#39;1&#39;,
+ &#39;mod_wsgi.version&#39;: (3, 3),
+ &#39;wsgi.errors&#39;: &lt;mod_wsgi.Log object at 0x7f49f50a00b0&gt;,
+ &#39;wsgi.file_wrapper&#39;: &lt;built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f49f50a2468&gt;,
+ &#39;wsgi.input&#39;: &lt;mod_wsgi.Input object at 0x7f49f50a0db0&gt;,
+ &#39;wsgi.multiprocess&#39;: True,
+ &#39;wsgi.multithread&#39;: True,
+ &#39;wsgi.run_once&#39;: False,
+ &#39;wsgi.url_scheme&#39;: &#39;http&#39;,
+ &#39;wsgi.version&#39;: (1, 1)}&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>value</td>
+                    <td class="code"><pre>{&#39;response_set__entity__name&#39;: u&#39;Botswana&#39;,
+ &#39;value&#39;: u&#39;{&quot;Year 1&quot;: &quot;Planned 2012&quot;, &quot;Value 1&quot;: &quot;MCH-HFS&quot;, &quot;Source 1&quot;: &quot;WHO/MCA&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>sources</td>
+                    <td class="code"><pre>[{&#39;id&#39;: 1, &#39;name&#39;: u&#39;Measure DHS&#39;}, {&#39;id&#39;: 2, &#39;name&#39;: u&#39;WHO/MCA&#39;}]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>json</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>indicators</td>
+                    <td class="code"><pre>[u&#39;1.6&#39;]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>values</td>
+                    <td class="code"><pre>[{&#39;response_set__entity__name&#39;: u&#39;Angola&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Benin&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Botswana&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: &quot;Planned 2012&quot;, &quot;Value 1&quot;: &quot;MCH-HFS&quot;, &quot;Source 1&quot;: &quot;WHO/MCA&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Burkina Faso&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: 2011, &quot;Value 1&quot;: &quot;CH-HFS+EmOC&quot;, &quot;Source 1&quot;: &quot;WHO/MCA&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Burundi&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Cameroon&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: 2010, &quot;Value 1&quot;: &quot;CH-HFS&quot;, &quot;Source 1&quot;: &quot;WHO/MCA&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Central African Republic&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Chad&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Comoros&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Congo&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&quot;C\xf4te d&#39;Ivoire&quot;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Democratic Republic of the Congo&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Equatorial Guinea&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Eritrea&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Ethiopia&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: 2008, &quot;Value 1&quot;: &quot;CH-HFS&quot;, &quot;Source 1&quot;: &quot;WHO/MCA&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Gabon&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Gambia&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Ghana&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: 2002, &quot;Value 1&quot;: &quot;MCH SPA&quot;, &quot;Source 1&quot;: &quot;Measure DHS&quot;, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Guinea&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, {&#39;response_set__entity__name&#39;: u&#39;Guinea-Bissau&#39;, &#39;value&#39;: u&#39;{&quot;Year 1&quot;: null, &quot;Value 1&quot;: null, &quot;Source 1&quot;: null, &quot;Yes/No&quot;: &quot;No data&quot;}&#39;}, &#39;...(remaining elements truncated)...&#39;]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>loads_value</td>
+                    <td class="code"><pre>{u&#39;Source 1&#39;: u&#39;WHO/MCA&#39;,
+ u&#39;Value 1&#39;: u&#39;MCH-HFS&#39;,
+ u&#39;Year 1&#39;: u&#39;Planned 2012&#39;,
+ u&#39;Yes/No&#39;: u&#39;No data&#39;}</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>score_items</td>
+                    <td class="code"><pre>[]</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>region</td>
+                    <td class="code"><pre>&lt;Region: African Region&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>indicator_item</td>
+                    <td class="code"><pre>u&#39;1.6&#39;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>vkeys</td>
+                    <td class="code"><pre>[u&#39;Value 1&#39;]</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+        <li class="frame">
+          <code>/home/coia/webapps/ierg/django-scorecard-processor/ierg/ierg_results/utils.py</code> in <code>calc_values</code>
+
+          
+            <div class="context" id="c139955477190344">
+              
+                <ol start="16" class="pre-context" id="pre139955477190344"><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>            values(&#39;value&#39;, &#39;response_set__entity__name&#39;)</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>    return values</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre></pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre></pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>def calc_values(value):</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>    if isinstance(value, basestring):</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>        if &#39;-&#39; in value:</pre></li></ol>
+              
+              <ol start="23" class="context-line"><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>            values = [float(value) for value in value.split(&#39;-&#39;)]</pre> <span>...</span></li></ol>
+              
+                <ol start='24' class="post-context" id="post139955477190344"><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>            value = sum(values) / len(values)</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>        elif &#39;&lt;&#39; in value:</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>            value = float(value.replace(&#39;&lt;&#39;, &#39;&#39;)) / 2</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>        elif &#39;&gt;&#39; in value:</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>            value = (float(value.replace(&#39;&gt;&#39;, &#39;&#39;)) + 100) / 2</pre></li><li onclick="toggle('pre139955477190344', 'post139955477190344')"><pre>        else:</pre></li></ol>
+              
+            </div>
+          
+
+          
+            <div class="commands">
+                
+                    <a href="#" onclick="return varToggle(this, '139955477190344')"><span>&#x25b6;</span> Local vars</a>
+                
+            </div>
+            <table class="vars" id="v139955477190344">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                  <tr>
+                    <td>value</td>
+                    <td class="code"><pre>u&#39;MCH&#39;</pre></td>
+                  </tr>
+                
+              </tbody>
+            </table>
+          
+        </li>
+      
+    </ul>
+  </div>
+  
+  <form action="http://dpaste.com/" name="pasteform" id="pasteform" method="post">
+
+  <div id="pastebinTraceback" class="pastebin">
+    <input type="hidden" name="language" value="PythonConsole">
+    <input type="hidden" name="title" value="ValueError at /indicators/1.6/aggregate/json/">
+    <input type="hidden" name="source" value="Django Dpaste Agent">
+    <input type="hidden" name="poster" value="Django">
+    <textarea name="content" id="traceback_area" cols="140" rows="25">
+Environment:
+
+
+Request Method: GET
+Request URL: http://coia.webfactional.com/indicators/1.6/aggregate/json/?region=1
+
+Django Version: 1.3.1
+Python Version: 2.7.3
+Installed Applications:
+[&#39;django.contrib.auth&#39;,
+ &#39;django.contrib.contenttypes&#39;,
+ &#39;django.contrib.sessions&#39;,
+ &#39;django.contrib.sites&#39;,
+ &#39;django.contrib.messages&#39;,
+ &#39;scorecard_processor&#39;,
+ &#39;guardian&#39;,
+ &#39;django.contrib.staticfiles&#39;,
+ &#39;grappelli&#39;,
+ &#39;django.contrib.admin&#39;,
+ &#39;south&#39;,
+ &#39;bootstrap&#39;,
+ &#39;ierg_results&#39;]
+Installed Middleware:
+(&#39;django.middleware.common.CommonMiddleware&#39;,
+ &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+ &#39;django.middleware.locale.LocaleMiddleware&#39;,
+ &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+ &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+ &#39;django.contrib.messages.middleware.MessageMiddleware&#39;)
+
+
+Traceback:
+File "/home/coia/webapps/ierg/lib/python2.7/django/core/handlers/base.py" in get_response
+  111.                         response = callback(request, *callback_args, **callback_kwargs)
+File "/home/coia/webapps/ierg/django-scorecard-processor/ierg/ierg_results/views.py" in aggregate
+  93.                 score_key = calc_values(loads_value.get(key))
+File "/home/coia/webapps/ierg/django-scorecard-processor/ierg/ierg_results/utils.py" in calc_values
+  23.             values = [float(value) for value in value.split(&#39;-&#39;)]
+
+Exception Type: ValueError at /indicators/1.6/aggregate/json/
+Exception Value: could not convert string to float: MCH
+</textarea>
+  <br><br>
+  <input type="submit" value="Share this traceback on a public Web site">
+  </div>
+</form>
+</div>
+
+
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+
+  <h3 id="get-info">GET</h3>
+  
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>region</td>
+            <td class="code"><pre>u&#39;1&#39;</pre></td>
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data</p>
+  
+  <h3 id="files-info">FILES</h3>
+  
+    <p>No FILES data</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data</p>
+  
+
+  <h3 id="meta-info">META</h3>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>mod_wsgi.listener_port</td>
+          <td class="code"><pre>&#39;29037&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_SERVER</td>
+          <td class="code"><pre>&#39;coia.webfactional.com&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.listener_host</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PROTOCOL</td>
+          <td class="code"><pre>&#39;HTTP/1.0&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_SOFTWARE</td>
+          <td class="code"><pre>&#39;Apache/2.2.17 (Unix) mod_wsgi/3.3 Python/2.7.3&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SCRIPT_NAME</td>
+          <td class="code"><pre>u&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.handler_script</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_SIGNATURE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUEST_METHOD</td>
+          <td class="code"><pre>&#39;GET&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HTTPS</td>
+          <td class="code"><pre>&#39;off&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH_INFO</td>
+          <td class="code"><pre>u&#39;/indicators/1.6/aggregate/json/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_SSL</td>
+          <td class="code"><pre>&#39;off&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>QUERY_STRING</td>
+          <td class="code"><pre>&#39;region=1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_USER_AGENT</td>
+          <td class="code"><pre>&#39;python-requests/0.11.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_CONNECTION</td>
+          <td class="code"><pre>&#39;close&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_NAME</td>
+          <td class="code"><pre>&#39;coia.webfactional.com&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_ADDR</td>
+          <td class="code"><pre>&#39;127.0.0.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.request_handler</td>
+          <td class="code"><pre>&#39;wsgi-script&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HTTP_X_FORWARDED_PROTO</td>
+          <td class="code"><pre>&#39;http&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.url_scheme</td>
+          <td class="code"><pre>&#39;http&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PATH_TRANSLATED</td>
+          <td class="code"><pre>&#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi/indicators/1.6/aggregate/json/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_PORT</td>
+          <td class="code"><pre>&#39;80&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multiprocess</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.input_chunked</td>
+          <td class="code"><pre>&#39;0&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_ADDR</td>
+          <td class="code"><pre>&#39;127.0.0.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DOCUMENT_ROOT</td>
+          <td class="code"><pre>&#39;/usr/local/apache2/htdocs&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.process_group</td>
+          <td class="code"><pre>&#39;ierg&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_PROTO</td>
+          <td class="code"><pre>&#39;http&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SCRIPT_FILENAME</td>
+          <td class="code"><pre>&#39;/home/coia/webapps/ierg/django-scorecard-processor/ierg/myproject.wsgi&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_ADMIN</td>
+          <td class="code"><pre>&#39;[no address given]&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.input</td>
+          <td class="code"><pre>&lt;mod_wsgi.Input object at 0x7f49f50a0db0&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_HOST</td>
+          <td class="code"><pre>&#39;coia.webfactional.com&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.multithread</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.callable_object</td>
+          <td class="code"><pre>&#39;application&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_CACHE_CONTROL</td>
+          <td class="code"><pre>&#39;max-stale=0&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REQUEST_URI</td>
+          <td class="code"><pre>&#39;/indicators/1.6/aggregate/json/?region=1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT</td>
+          <td class="code"><pre>&#39;*/*&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.version</td>
+          <td class="code"><pre>(1, 1)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>GATEWAY_INTERFACE</td>
+          <td class="code"><pre>&#39;CGI/1.1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_FOR</td>
+          <td class="code"><pre>&#39;118.93.33.189&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.errors</td>
+          <td class="code"><pre>&lt;mod_wsgi.Log object at 0x7f49f50a00b0&gt;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>REMOTE_PORT</td>
+          <td class="code"><pre>&#39;48133&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_X_FORWARDED_HOST</td>
+          <td class="code"><pre>&#39;coia.webfactional.com&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.version</td>
+          <td class="code"><pre>(3, 3)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.run_once</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.application_group</td>
+          <td class="code"><pre>&#39;web311.webfaction.com|&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>mod_wsgi.script_reloading</td>
+          <td class="code"><pre>&#39;1&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>wsgi.file_wrapper</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE</td>
+          <td class="code"><pre>&#39;ec5227afbdf77ff94ea4698baa3cf414&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>HTTP_ACCEPT_ENCODING</td>
+          <td class="code"><pre>&#39;identity, deflate, compress, gzip&#39;</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  <h3 id="settings-info">Settings</h3>
+  <h4>Using settings module <code>ierg.settings</code></h4>
+  <table class="req">
+    <thead>
+      <tr>
+        <th>Setting</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>DEBUG_TOOLBAR_PANELS</td>
+          <td class="code"><pre>(&#39;debug_toolbar.panels.version.VersionDebugPanel&#39;,
+ &#39;debug_toolbar.panels.timer.TimerDebugPanel&#39;,
+ &#39;debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel&#39;,
+ &#39;debug_toolbar.panels.headers.HeaderDebugPanel&#39;,
+ &#39;debug_toolbar.panels.request_vars.RequestVarsDebugPanel&#39;,
+ &#39;debug_toolbar.panels.template.TemplateDebugPanel&#39;,
+ &#39;debug_toolbar.panels.sql.SQLDebugPanel&#39;,
+ &#39;debug_toolbar.panels.signals.SignalDebugPanel&#39;,
+ &#39;debug_toolbar.panels.logger.LoggingPanel&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_L10N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_CODE</td>
+          <td class="code"><pre>&#39;en-gb&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ROOT_URLCONF</td>
+          <td class="code"><pre>&#39;ierg.urls&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MANAGERS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CHARSET</td>
+          <td class="code"><pre>&#39;UTF-8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_ROOT</td>
+          <td class="code"><pre>&#39;/home/coia/webapps/static/static&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_DATABASE_CHARSET</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MESSAGE_STORAGE</td>
+          <td class="code"><pre>&#39;django.contrib.messages.storage.user_messages.LegacyFallbackStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_HOST</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_SUBJECT_PREFIX</td>
+          <td class="code"><pre>&#39;[Local] &#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SEND_BROKEN_LINK_EMAILS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>URL_VALIDATOR_USER_AGENT</td>
+          <td class="code"><pre>&#39;Django/1.3.1 (http://www.djangoproject.com)&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_FINDERS</td>
+          <td class="code"><pre>(&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;,
+ &#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;sessionid&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMIN_FOR</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_INPUT_FORMATS</td>
+          <td class="code"><pre>(&#39;%H:%M:%S&#39;, &#39;%H:%M&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASES</td>
+          <td class="code"><pre>{&#39;default&#39;: {&#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+             &#39;HOST&#39;: &#39;&#39;,
+             &#39;NAME&#39;: &#39;coia&#39;,
+             &#39;OPTIONS&#39;: {},
+             &#39;PASSWORD&#39;: &#39;********************&#39;,
+             &#39;PORT&#39;: &#39;&#39;,
+             &#39;TEST_CHARSET&#39;: None,
+             &#39;TEST_COLLATION&#39;: None,
+             &#39;TEST_MIRROR&#39;: None,
+             &#39;TEST_NAME&#39;: None,
+             &#39;TIME_ZONE&#39;: &#39;Africa/Johannesburg&#39;,
+             &#39;USER&#39;: &#39;coia&#39;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_DATABASE_NAME</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_PERMISSIONS</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_HANDLERS</td>
+          <td class="code"><pre>(&#39;django.core.files.uploadhandler.MemoryFileUploadHandler&#39;,
+ &#39;django.core.files.uploadhandler.TemporaryFileUploadHandler&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_CONTENT_TYPE</td>
+          <td class="code"><pre>&#39;text/html&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>APPEND_SLASH</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIRST_DAY_OF_WEEK</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_ROUTERS</td>
+          <td class="code"><pre>[]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>YEAR_MONTH_FORMAT</td>
+          <td class="code"><pre>&#39;F Y&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_STORAGE</td>
+          <td class="code"><pre>&#39;django.contrib.staticfiles.storage.StaticFilesStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHES</td>
+          <td class="code"><pre>{&#39;default&#39;: {&#39;BACKEND&#39;: &#39;django.core.cache.backends.locmem.LocMemCache&#39;,
+             &#39;LOCATION&#39;: &#39;unique-snowflake&#39;}}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SERVER_EMAIL</td>
+          <td class="code"><pre>&#39;&quot;IHP+Results Survey 2012&quot; &lt;survey2012@ihpresults.net&gt;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_PATH</td>
+          <td class="code"><pre>&#39;/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IGNORABLE_404_ENDS</td>
+          <td class="code"><pre>(&#39;mail.pl&#39;, &#39;mailform.pl&#39;, &#39;mail.cgi&#39;, &#39;mailform.cgi&#39;, &#39;favicon.ico&#39;, &#39;.php&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MIDDLEWARE_CLASSES</td>
+          <td class="code"><pre>(&#39;django.middleware.common.CommonMiddleware&#39;,
+ &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+ &#39;django.middleware.locale.LocaleMiddleware&#39;,
+ &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+ &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+ &#39;django.contrib.messages.middleware.MessageMiddleware&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_I18N</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>THOUSAND_SEPARATOR</td>
+          <td class="code"><pre>&#39;,&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SECRET_KEY</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGE_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;django_language&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_TEMP_DIR</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TRANSACTIONS_MANAGED</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING_CONFIG</td>
+          <td class="code"><pre>&#39;django.utils.log.dictConfig&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATE_LOADERS</td>
+          <td class="code"><pre>(&#39;django.template.loaders.filesystem.Loader&#39;,
+ &#39;django.template.loaders.app_directories.Loader&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATE_DEBUG</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>AUTHENTICATION_BACKENDS</td>
+          <td class="code"><pre>(&#39;django.contrib.auth.backends.ModelBackend&#39;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_DATABASE_COLLATION</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORCE_SCRIPT_NAME</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_X_FORWARDED_HOST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_SECURE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_DOMAIN</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_CHARSET</td>
+          <td class="code"><pre>&#39;utf-8&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_FILE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FILE_STORAGE</td>
+          <td class="code"><pre>&#39;django.core.files.storage.FileSystemStorage&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INSTALLED_APPS</td>
+          <td class="code"><pre>[&#39;django.contrib.auth&#39;,
+ &#39;django.contrib.contenttypes&#39;,
+ &#39;django.contrib.sessions&#39;,
+ &#39;django.contrib.sites&#39;,
+ &#39;django.contrib.messages&#39;,
+ &#39;scorecard_processor&#39;,
+ &#39;guardian&#39;,
+ &#39;django.contrib.staticfiles&#39;,
+ &#39;grappelli&#39;,
+ &#39;django.contrib.admin&#39;,
+ &#39;south&#39;,
+ &#39;bootstrap&#39;,
+ &#39;ierg_results&#39;]</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES</td>
+          <td class="code"><pre>((&#39;en-gb&#39;, &#39;English&#39;), (&#39;fr&#39;, u&#39;Fran\xe7ais&#39;))</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_ENGINE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_NAME</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMENTS_FIRST_FEW</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PREPEND_WWW</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_HTTPONLY</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_PORT</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG_PROPAGATE_EXCEPTIONS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MONTH_DAY_FORMAT</td>
+          <td class="code"><pre>&#39;F j&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_URL</td>
+          <td class="code"><pre>&#39;/accounts/login/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_EXPIRE_AT_BROWSER_CLOSE</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_FORMAT</td>
+          <td class="code"><pre>&#39;P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_INPUT_FORMATS</td>
+          <td class="code"><pre>(&#39;%Y-%m-%d&#39;,
+ &#39;%m/%d/%Y&#39;,
+ &#39;%m/%d/%y&#39;,
+ &#39;%b %d %Y&#39;,
+ &#39;%b %d, %Y&#39;,
+ &#39;%d %b %Y&#39;,
+ &#39;%d %b, %Y&#39;,
+ &#39;%B %d %Y&#39;,
+ &#39;%B %d, %Y&#39;,
+ &#39;%d %B %Y&#39;,
+ &#39;%d %B, %Y&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_COOKIE_NAME</td>
+          <td class="code"><pre>&#39;csrftoken&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_PASSWORD</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PASSWORD_RESET_TIMEOUT_DAYS</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_ALIAS</td>
+          <td class="code"><pre>&#39;default&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_SAVE_EVERY_REQUEST</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMIN_MEDIA_PREFIX</td>
+          <td class="code"><pre>&#39;/static/grappelli/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>NUMBER_GROUPING</td>
+          <td class="code"><pre>0</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_ENGINE</td>
+          <td class="code"><pre>&#39;django.contrib.sessions.backends.db&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CSRF_FAILURE_VIEW</td>
+          <td class="code"><pre>&#39;django.views.csrf.csrf_failure&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMENTS_SKETCHY_USERS_GROUP</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGIN_REDIRECT_URL</td>
+          <td class="code"><pre>&#39;/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGGING</td>
+          <td class="code"><pre>{&#39;disable_existing_loggers&#39;: False,
+ &#39;handlers&#39;: {&#39;mail_admins&#39;: {&#39;class&#39;: &#39;django.utils.log.AdminEmailHandler&#39;,
+                              &#39;level&#39;: &#39;ERROR&#39;}},
+ &#39;loggers&#39;: {&#39;django.request&#39;: {&#39;handlers&#39;: [&#39;mail_admins&#39;],
+                                &#39;level&#39;: &#39;ERROR&#39;,
+                                &#39;propagate&#39;: True}},
+ &#39;version&#39;: 1}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_KEY_PREFIX</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOCALE_PATHS</td>
+          <td class="code"><pre>(&#39;locale&#39;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATE_STRING_IF_INVALID</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMENTS_ALLOW_PROFANITIES</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LOGOUT_URL</td>
+          <td class="code"><pre>&#39;/accounts/logout/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_USE_TLS</td>
+          <td class="code"><pre>True</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATE_DIRS</td>
+          <td class="code"><pre>(&#39;templates&#39;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FIXTURE_DIRS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST</td>
+          <td class="code"><pre>&#39;smtp.gmail.com&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATE_FORMAT</td>
+          <td class="code"><pre>&#39;N j, Y&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_ROOT</td>
+          <td class="code"><pre>&#39;/home/coia/webapps/static/media&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ADMINS</td>
+          <td class="code"><pre>((&#39;Sysadmin&#39;, &#39;sysadmin@ihpresults.net&#39;),)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FORMAT_MODULE_PATH</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_FROM_EMAIL</td>
+          <td class="code"><pre>&#39;&quot;IHP+Results Survey 2012&quot; &lt;survey2012@ihpresults.net&gt;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATICFILES_DIRS</td>
+          <td class="code"><pre>(&#39;static/&#39;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>MEDIA_URL</td>
+          <td class="code"><pre>&#39;/uploads/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_FORMAT</td>
+          <td class="code"><pre>&#39;N j, Y, P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>IGNORABLE_404_STARTS</td>
+          <td class="code"><pre>(&#39;/cgi-bin/&#39;, &#39;/_vti_bin&#39;, &#39;/_vti_inf&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SITE_ID</td>
+          <td class="code"><pre>1</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DISALLOWED_USER_AGENTS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ALLOWED_INCLUDE_ROOTS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DECIMAL_SEPARATOR</td>
+          <td class="code"><pre>&#39;.&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATE_FORMAT</td>
+          <td class="code"><pre>&#39;m/d/Y&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_USER</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEST_RUNNER</td>
+          <td class="code"><pre>&#39;django.test.simple.DjangoTestSuiteRunner&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TIME_ZONE</td>
+          <td class="code"><pre>&#39;Africa/Johannesburg&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>FILE_UPLOAD_MAX_MEMORY_SIZE</td>
+          <td class="code"><pre>2621440</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_BACKEND</td>
+          <td class="code"><pre>&#39;django.core.mail.backends.smtp.EmailBackend&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_TABLESPACE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>TEMPLATE_CONTEXT_PROCESSORS</td>
+          <td class="code"><pre>(&#39;django.contrib.auth.context_processors.auth&#39;,
+ &#39;django.core.context_processors.debug&#39;,
+ &#39;django.core.context_processors.request&#39;,
+ &#39;django.core.context_processors.i18n&#39;,
+ &#39;django.core.context_processors.media&#39;,
+ &#39;django.core.context_processors.static&#39;,
+ &#39;django.contrib.messages.context_processors.messages&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SESSION_COOKIE_AGE</td>
+          <td class="code"><pre>1209600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SETTINGS_MODULE</td>
+          <td class="code"><pre>&#39;ierg.settings&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>USE_ETAGS</td>
+          <td class="code"><pre>False</pre></td>
+        </tr>
+      
+        <tr>
+          <td>LANGUAGES_BIDI</td>
+          <td class="code"><pre>(&#39;he&#39;, &#39;ar&#39;, &#39;fa&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEFAULT_INDEX_TABLESPACE</td>
+          <td class="code"><pre>&#39;&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>INTERNAL_IPS</td>
+          <td class="code"><pre>(&#39;127.0.0.1&#39;,)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>STATIC_URL</td>
+          <td class="code"><pre>&#39;/static/&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_PORT</td>
+          <td class="code"><pre>587</pre></td>
+        </tr>
+      
+        <tr>
+          <td>SHORT_DATETIME_FORMAT</td>
+          <td class="code"><pre>&#39;m/d/Y P&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ABSOLUTE_URL_OVERRIDES</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_OPTIONS</td>
+          <td class="code"><pre>{}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>CACHE_MIDDLEWARE_SECONDS</td>
+          <td class="code"><pre>600</pre></td>
+        </tr>
+      
+        <tr>
+          <td>BANNED_IPS</td>
+          <td class="code"><pre>()</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DEBUG_TOOLBAR_CONFIG</td>
+          <td class="code"><pre>{&#39;INTERCEPT_REDIRECTS&#39;: False, &#39;SQL_DUPLICATES&#39;: True}</pre></td>
+        </tr>
+      
+        <tr>
+          <td>ANONYMOUS_USER_ID</td>
+          <td class="code"><pre>-1</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATETIME_INPUT_FORMATS</td>
+          <td class="code"><pre>(&#39;%Y-%m-%d %H:%M:%S&#39;,
+ &#39;%Y-%m-%d %H:%M&#39;,
+ &#39;%Y-%m-%d&#39;,
+ &#39;%m/%d/%Y %H:%M:%S&#39;,
+ &#39;%m/%d/%Y %H:%M&#39;,
+ &#39;%m/%d/%Y&#39;,
+ &#39;%m/%d/%y %H:%M:%S&#39;,
+ &#39;%m/%d/%y %H:%M&#39;,
+ &#39;%m/%d/%y&#39;)</pre></td>
+        </tr>
+      
+        <tr>
+          <td>DATABASE_PASSWORD</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMENTS_MODERATORS_GROUP</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>COMMENTS_BANNED_USERS_GROUP</td>
+          <td class="code"><pre>None</pre></td>
+        </tr>
+      
+        <tr>
+          <td>EMAIL_HOST_USER</td>
+          <td class="code"><pre>&#39;survey2012@ihpresults.net&#39;</pre></td>
+        </tr>
+      
+        <tr>
+          <td>PROFANITIES_LIST</td>
+          <td class="code"><pre>&#39;********************&#39;</pre></td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+</div>
+
+  <div id="explanation">
+    <p>
+      You're seeing this error because you have <code>DEBUG = True</code> in your
+      Django settings file. Change that to <code>False</code>, and Django will
+      display a standard 500 page.
+    </p>
+  </div>
+
+</body>
+</html>

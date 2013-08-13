@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "WHO Mortality Database"}, {"id": 2, "name": "World Health Statistics 2012"}], "region": "European Region", "target": "60", "indicator": "1.5", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 100.0, "countries": 5}, "no_data": {"value": 0.0, "countries": 0}}}]

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg id="dashboard" xmlns="http://www.w3.org/2000/svg" version="1.0" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(960,0)">
+    <rect id="background" x="22" y="75" width="918" height="475" fill="#fff" stroke="#E6E7E8"/>
+    <g id="pageone">
+        <g class="header">
+            <rect id="_x5F_lightblueblock_2_"  height="34.017" width="713.36" y="27.049" x="225.63" fill="#6CADDF"/>
+            <image xlink:href="logo.png" transform="matrix(.216 0 0 .216 21.574 25.244)" height="178" width="859" />
+            <text transform="translate(495.85 43.39)">
+                <tspan font-size="12" y="0" x="0" font-family="&apos;HelveticaNeue-UltraLight&apos;" fill="#FFFFFF">UN Commission on Information and Accountability for Women&apos;s and Children&apos;s Health</tspan>
+                <tspan font-size="9" y="10.667" x="277.818" font-family="&apos;HelveticaNeue-Light&apos;" fill="#114A8A">Data analysis dashboard for the iERG</tspan>
+            </text>
+            <text font-family="&apos;Arial-ItalicMT&apos;" transform="translate(306.55 92.466)" font-size="8" fill="#58595B">Data compiled by WHO based on a range of country sources - see individual charts for details</text>
+        </g>
+        <g class="region">
+            <rect id="_x5F_lightblueblock_1_" height="21.997" width="889.3" y="103.99" x="35.943" fill="#114A8A"/>
+            <text font-family="&apos;HelveticaNeue-UltraLight&apos;" transform="translate(44.856 119.02)" font-size="12" fill="#FFFFFF">By Region</text>
+            <g class="regions">
+                <g class="africa">
+                    <rect id="_x5F_lightblueblock_3_" height="21.997" width="121.89" y="134.66" x="36.47" fill="#6CADDF"/>
+                    <text font-family="&apos;Arial-BoldMT&apos;" transform="translate(68.54 148.56)" font-size="8" fill="#FFFFFF">African Region</text>
+                </g>
+            </g>
+        </g>
+        <g class="country">
+            <g class="lines">
+                <path d="m938.73 74.705v473.5h-917.46v-473.5h917.46v0.005zm-1.33 1.339h-914.8v470.82h914.79v-470.82l0.01 0.004z" fill="#E6E7E8"/>
+                <path d="m926.02 199.81v271.37h-889.94v-271.37h889.94zm-1.3 1.3h-887.35v268.77h887.35v-268.77z" fill="#E6E7E8"/>
+                <path d="m262.94 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+                <path d="m488.4 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+                <path d="m716.79 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+            </g>
+            <g class="countries"></g>
+        </g>
+
+        <g class="analysis">
+            <rect height="21.997" width="889.3" y="480.41" x="35.943" fill="#DF7627"/>
+            <text font-family="&apos;HelveticaNeue-UltraLight&apos;" transform="translate(44.856 495.45)" font-size="12" fill="#FFFFFF">Additional Anlaysis</text>
+            <rect id="data_analysis" height="21.997" width="226.53" y="512.66" x="36.47" fill="#6CADDF"/>
+            <text font-family="&apos;Arial-BoldMT&apos;" transform="translate(122.04 526.56)" font-size="8" fill="#FFFFFF">Data Analysis</text>
+        </g>
+    </g>
+</g>
+
+<switch>
+	<foreignObject y="0" x="0" height="1" width="1" requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/">
+	</foreignObject>
+	<g>
+		<rect id="_x5F_lightblueblock_2_" height="34.017" width="713.36" y="27.049" x="225.63" fill="#6CADDF"/>
+		<rect height="26.115" width="643.06" y="32.218" x="283.34" fill="none"/>
+		<text transform="translate(495.85 43.39)"><tspan font-size="12" y="0" x="0" font-family="&apos;HelveticaNeue-UltraLight&apos;" fill="#FFFFFF">UN Commission on Information and Accountability for Women&apos;s and Children&apos;s Health </tspan><tspan font-size="9" y="10.667" x="277.818" font-family="&apos;HelveticaNeue-Light&apos;" fill="#114A8A">Data analysis dashboard for the iERG</tspan></text>
+					<path d="m938.73 74.705v473.5h-917.46v-473.5h917.46v0.005zm-1.33 1.339h-914.8v470.82h914.79v-470.82l0.01 0.004z" fill="#E6E7E8"/>
+					<path d="m926.02 199.81v271.37h-889.94v-271.37h889.94zm-1.3 1.3h-887.35v268.77h887.35v-268.77z" fill="#E6E7E8"/>
+		<rect id="_x5F_lightblueblock_1_" height="21.997" width="889.3" y="103.99" x="35.943" fill="#114A8A"/>
+		<rect height="16.252" width="623.77" y="107.85" x="44.855" fill="none"/>
+		<text font-family="&apos;HelveticaNeue-UltraLight&apos;" transform="translate(44.856 119.02)" font-size="12" fill="#FFFFFF">By Region</text>
+			<rect id="_x5F_lightblueblock_3_" height="21.997" width="121.89" y="134.66" x="36.47" fill="#6CADDF"/>
+			<rect height="16.252" width="124.42" y="140.47" x="36.078" fill="none"/>
+			<text font-family="&apos;Arial-BoldMT&apos;" transform="translate(68.54 148.56)" font-size="8" fill="#FFFFFF">African Region</text>
+		<rect height="247.58" width="186.9" y="212.96" x="49.43" fill="none"/>
+		<text font-size="9.7" transform="translate(49.429 222.72)"><tspan y="0" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Angola</tspan><tspan y="13" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Benin</tspan><tspan y="26" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Botswana</tspan><tspan y="39" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Burkina Faso</tspan><tspan y="52" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Burundi</tspan><tspan y="65" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Cameroon</tspan><tspan y="78" x="0" font-family="&apos;Arial-BoldMT&apos;" fill="#6CADDF">Central African Republic</tspan><tspan y="91" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Chad</tspan><tspan y="104" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Comoros</tspan><tspan y="117" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Congo</tspan><tspan y="130" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Côte d&apos;Ivoire</tspan><tspan y="143" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Democratic Republic of the Congo</tspan><tspan y="156" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Equatorial Guinea</tspan><tspan y="169" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Eritrea</tspan><tspan y="182" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Ethiopia</tspan><tspan y="195" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Gabon</tspan><tspan y="208" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Gambia</tspan><tspan y="221" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Ghana</tspan><tspan y="234" x="0" font-family="&apos;ArialMT&apos;" fill="#58595B">Guinea</tspan></text>
+		<rect height="250.26" width="185.53" y="212.96" x="276.32" fill="none"/>
+		<text font-size="9.7" font-family="&apos;ArialMT&apos;" transform="translate(276.32 222.72)" fill="#58595B"><tspan y="0" x="0">Guinea-Bissau</tspan><tspan y="13" x="0">Kenya</tspan><tspan y="26" x="0">Lesotho</tspan><tspan y="39" x="0">Liberia</tspan><tspan y="52" x="0">Madagascar</tspan><tspan y="65" x="0">Malawi</tspan><tspan y="78" x="0">Mali</tspan><tspan y="91" x="0">Mauritania</tspan><tspan y="104" x="0">Mozambique</tspan><tspan y="117" x="0">Niger</tspan><tspan y="130" x="0">Nigeria</tspan><tspan y="143" x="0">Rwanda</tspan><tspan y="156" x="0">Sao Tome and Principe</tspan><tspan y="169" x="0">Senegal</tspan><tspan y="182" x="0">Sierra Leone</tspan><tspan y="195" x="0">South Africa</tspan><tspan y="208" x="0">Swaziland</tspan><tspan y="221" x="0">Togo</tspan><tspan y="234" x="0">Uganda</tspan></text>
+			<rect id="_x5F_lightblueblock_6_" height="21.997" width="121.89" y="134.66" x="164.69" fill="#E6E7E8"/>
+			<rect height="16.252" width="124.26" y="140.47" x="163.82" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(182.28 148.52)" font-size="8" fill="#58595B">Region of the Americas</text>
+			<rect id="_x5F_lightblueblock_5_" height="21.997" width="121.89" y="134.66" x="420.02" fill="#E6E7E8"/>
+			<rect height="16.252" width="124.26" y="140.47" x="419.16" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(430.19 148.52)" font-size="8" fill="#58595B">East Mediterranean Region</text>
+		<rect height="16.252" width="888.9" y="84.486" x="37.287" fill="none"/>
+		<text font-family="&apos;Arial-ItalicMT&apos;" transform="translate(306.55 92.466)" font-size="8" fill="#58595B">Data compiled by WHO based on a range of country sources - see individual charts for details</text>
+			<rect id="_x5F_lightblueblock_8_" height="21.997" width="121.89" y="134.66" x="675.13" fill="#E6E7E8"/>
+			<rect height="16.252" width="120.68" y="140.47" x="677.44" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(693.21 148.52)" font-size="8" fill="#58595B">South-East Asia Region</text>
+			<rect id="_x5F_lightblueblock_11_" height="21.997" width="121.89" y="134.66" x="803.35" fill="#E6E7E8"/>
+			<rect height="16.252" width="117.26" y="140.47" x="805.66" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(852.22 148.52)" font-size="8" fill="#58595B">Global </text>
+			<rect id="_x5F_lightblueblock_7_" height="21.997" width="121.89" y="134.66" x="547.46" fill="#E6E7E8"/>
+			<rect height="16.252" width="120.68" y="140.47" x="549.77" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(566.44 148.52)" font-size="8" fill="#58595B">Western Pacific Region</text>
+			<rect id="_x5F_lightblueblock_4_" height="21.997" width="121.89" y="134.66" x="291.8" fill="#E6E7E8"/>
+			<rect height="16.252" width="124.42" y="140.47" x="291.41" fill="none"/>
+			<text font-family="&apos;ArialMT&apos;" transform="translate(321.09 148.52)" font-size="8" fill="#58595B">European Region</text>
+					<path d="m262.94 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+					<path d="m488.4 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+					<path d="m716.79 456.89v-241.48h1.299l0.001 241.47h-1.3z" fill="#E6E7E8"/>
+
+		<rect id="_x5F_lightblueblock_18_" height="21.997" width="226.53" y="512.66" x="36.47" fill="#6CADDF"/>
+		<rect height="16.252" width="226.78" y="518.47" x="36.078" fill="none"/>
+		<text font-family="&apos;Arial-BoldMT&apos;" transform="translate(122.04 526.56)" font-size="8" fill="#FFFFFF">Data Analysis</text>
+
+
+		<rect id="_x5F_lightblueblock_9_" height="21.997" width="889.3" y="167.08" x="35.943" fill="#79317F"/>
+		<rect height="16.252" width="623.77" y="170.94" x="44.855" fill="none"/>
+		<text font-family="&apos;HelveticaNeue-UltraLight&apos;" transform="translate(44.856 182.11)" font-size="12" fill="#FFFFFF">By Country</text>
+		<rect id="_x5F_lightblueblock_10_" height="21.997" width="889.3" y="480.41" x="35.943" fill="#DF7627"/>
+		<rect height="16.253" width="623.77" y="484.27" x="44.855" fill="none"/>
+		<text font-family="&apos;HelveticaNeue-UltraLight&apos;" transform="translate(44.856 495.45)" font-size="12" fill="#FFFFFF">Additional Anlaysis</text>
+		<rect height="247.58" width="187" y="212.96" x="501.79" fill="none"/>
+		<text font-size="9.7" font-family="&apos;ArialMT&apos;" transform="translate(501.79 219.91)" fill="#58595B"><tspan y="0" x="0">United Republic of Tanzania</tspan><tspan y="13" x="0">Zambia</tspan><tspan y="26" x="0">Zimbabwe</tspan><tspan y="39" x="0">Bolivia (Plurinational State of)</tspan><tspan y="52" x="0">Brazil</tspan><tspan y="65" x="0">Guatemala</tspan><tspan y="78" x="0">Haiti</tspan><tspan y="91" x="0">Mexico</tspan><tspan y="104" x="0">Peru</tspan><tspan y="117" x="0">Bangladesh</tspan><tspan y="130" x="0">Democratic People&apos;s Republic of Korea</tspan><tspan y="143" x="0">India</tspan><tspan y="156" x="0">Indonesia</tspan><tspan y="169" x="0">Myanmar</tspan><tspan y="182" x="0">Nepal </tspan><tspan y="195" x="0">Azerbaijan</tspan><tspan y="208" x="0">Kyrgyzstan</tspan><tspan y="221" x="0">Tajikistan</tspan><tspan y="234" x="0">Turkmenistan</tspan></text>
+		<rect height="247.58" width="184.33" y="212.96" x="729.33" fill="none"/>
+		<text font-size="9.7" font-family="&apos;ArialMT&apos;" transform="translate(729.33 219.91)" fill="#58595B"><tspan y="0" x="0">Uzbekistan</tspan><tspan y="13" x="0">Afghanistan</tspan><tspan y="26" x="0">Djibouti</tspan><tspan y="39" x="0">Egypt</tspan><tspan y="52" x="0">Iraq</tspan><tspan y="65" x="0">Morocco</tspan><tspan y="78" x="0">Pakistan</tspan><tspan y="91" x="0">Somalia</tspan><tspan y="104" x="0">Sudan</tspan><tspan y="117" x="0">Yemen</tspan><tspan y="130" x="0">Cambodia</tspan><tspan y="143" x="0">China</tspan><tspan y="156" x="0">Lao People&apos;s Democratic Republic</tspan><tspan y="169" x="0">Papua New Guinea</tspan><tspan y="182" x="0">Philippines</tspan><tspan y="195" x="0">Republic of Korea</tspan><tspan y="208" x="0">Solomon Islands</tspan><tspan y="221" x="0">Viet Nam</tspan></text>
+		<g id="I_x26_A_x5F_women_and_child_health_LOGO.psd">
+				<image id="I_x26_A_x5F_women_and_child_health_LOGO" xlink:href="logo.png" transform="matrix(.216 0 0 .216 21.574 25.244)" height="178" width="859">
+			</image>
+		</g>
+	</g>
+</switch>
+</svg>

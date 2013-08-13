@@ -1,0 +1,624 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script type='text/javascript' src='d3.v2.min.js'></script>
+    <script type='text/javascript' src='lib/d3-graph/segmentpie.js'></script>
+    <script type='text/javascript' src='lib/d3-graph/roundedbargraph.js'></script>
+    <script type='text/javascript' src='lib/d3-graph/boxwhisker.js'></script>
+
+    <script type='text/javascript' src='lib/native.history.js'></script>
+    <script type='text/javascript' src='lib/coia.js'></script>
+
+    <script type='text/javascript' src='lib/svg.js'></script>
+    <script type='text/javascript' src='lib/table.js'></script>
+    <script type='text/javascript' src='lib/summary.js'></script>
+    <script type='text/javascript' src='lib/boxwhisker.js'></script>
+    <script type='text/javascript' src='lib/absolute.js'></script>
+    <script type='text/javascript' src='lib/aggregate.js'></script>
+    <link rel="stylesheet" href="lib/style.css" type="text/css" />
+
+    <script>
+
+    function render_page (){
+        var state = History.getState();
+        console.log(state.data, state.title);
+        if (COIA.countries.data === undefined){
+            d3.json('json/init.json', function(json){
+                COIA.init(json);
+                render_page();
+            });
+            return;
+        }
+        // Fresh Page Load.
+        if (state.data.graph === undefined &&
+            state.data.country === undefined){
+            COIA.show_dashboard();
+        } else if (state.data.graph === "dashboard"){
+            COIA.show_dashboard();
+        } else if (state.data.country !== undefined){
+            COIA.show_country_by_name(state.data.country);
+        } else {
+            if (state.data.graph !== undefined){
+                if (COIA.graph != state.data.graph){
+                    COIA.graph = state.data.graph;
+                    update_graph_names();
+                }else {
+                    COIA.graph = state.data.graph;
+                }
+            }
+            if (state.data.rec !== undefined){
+                COIA.recommendations.set(state.data.rec);
+            }
+            if (state.data.reg !== undefined){
+                COIA.regions.set(state.data.reg);
+            }
+            if (state.data.page !== undefined){
+                COIA.switch_page(state.data.page);
+            }
+            render_graphs();
+        }
+    }
+    History.Adapter.bind(window,'statechange', render_page);
+    render_page();
+    History.pushState({},"dashboard", "");
+
+    </script>
+</head>
+<body>
+
+<div>
+<svg id="dashboard" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" height="975" version="1.0" viewBox="0 0 940 650" overflow="visible" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect id="background" x="22" y="75" width="918" height="550" fill="#fff" stroke="#E6E7E8"/>
+    <g class="header">
+        <rect  height="34.017" width="713.36" y="27.049" x="225.63" fill="#6CADDF"  />
+        <image xlink:href="logo.png" transform="matrix(.216 0 0 .216 21.574 25.244)" height="178" width="859"  class="dashboard_button" />
+        <text transform="translate(470.85 43.39)">
+            <tspan font-size="12" y="0" x="460" text-anchor="end" font-family="'HelveticaNeue-UltraLight'" fill="#FFFFFF">UN Commission on Information and Accountability for Women's and Children's Health</tspan>
+            <tspan font-size="9" y="10.667" x="455" text-anchor="end" font-family="'HelveticaNeue-Light'" fill="#114A8A">Data analysis dashboard for the iERG</tspan>
+        </text>
+    </g>
+
+    <g id="page1" class="page">
+        <g class="header">
+            <text transform="translate(35.9434, 94.6138)" style="fill:#DF7627; font-family:'HelveticaNeue-Light'; font-size:14;">Dashboard</text>
+            <text font-family="'Arial-ItalicMT'" transform="translate(306.55 92.466)" font-size="8" fill="#58595B">Data compiled by WHO based on a range of country sources - see individual charts for details</text>
+        </g>
+        <g class="recommendations" transform="translate(0, 103)">
+            <rect height="21.997" width="889.3" y="0" x="35.943" fill="#58595B"/>
+            <text font-family="'HelveticaNeue-UltraLight'" transform="translate(44.856, 15.02)" font-size="12" fill="#FFFFFF">By Recommendation</text>
+            <g class="recommendation" transform="translate(36.47, 30)"></g>
+        </g>
+
+        <g class="region" transform="translate(0, 162)">
+            <rect height="21.997" width="889.3" y="0" x="35.943" fill="#114A8A"/>
+            <text font-family="'HelveticaNeue-UltraLight'" transform="translate(44.856, 15)" font-size="12" fill="#FFFFFF">By Region</text>
+            <g class="regions" transform="translate(36.47,30)"></g>
+        </g>
+
+        <g class="country" transform="translate(0, 220)">
+            <rect height="21.997" width="889.3" y="0" x="35.943" fill="#79317F"/>
+            <text font-family="'HelveticaNeue-UltraLight'" transform="translate(44.856, 15)" font-size="12" fill="#FFFFFF">By Country</text>
+
+            <g class="lines" transform="translate(0, 32)">
+                <rect x="35.943" y="0" width="889" height="265" fill="#fff" stroke="#E6E7E8" stroke-width="1.5"/>
+                <line x1="262" y1="8" x2="262" y2="255" stroke="#E6E7E8" stroke-width="1.5"/>
+                <line x1="488" y1="8" x2="488" y2="255" stroke="#E6E7E8" stroke-width="1.5"/>
+                <line x1="716" y1="8" x2="716" y2="255" stroke="#E6E7E8" stroke-width="1.5"/>
+            </g>
+            <g class="countries" transform="translate(36,50)">
+            </g>
+        </g>
+
+        <g class="analysis" transform="translate(0, 528)">
+            <rect height="21.997" width="889.3" y="0" x="35.943" fill="#DF7627"/>
+            <text font-family="'HelveticaNeue-UltraLight'" transform="translate(44.856, 15)" font-size="12" fill="#FFFFFF">Additional Analysis</text>
+            <g class="button" id="data_analysis">
+                <rect height="21.997" width="226.53" y="30" x="36.47" fill="#6CADDF"/>
+                <text font-family="'Arial-BoldMT'" transform="translate(122.04 44)" font-size="8" fill="#FFFFFF">Data Availability</text>
+            </g>
+        </g>
+    </g>
+
+
+    <g id="page2" style="visibility:hidden; opacity:0;" class="page">
+        <line x1="36.47" x2="925" y1="120" y2="120" stroke="#E6E7E8" stroke-width="1.5px" />
+        <g class="recommendations" transform="translate(36.47, 90)">
+            <g class="recommendation"></g>
+        </g>
+
+
+
+        <g class="header" transform="translate(36.47, 145)">
+            <rect  x="0" y="12.476" style="fill:#114A8A;" width="789.98" height="21.997"/>
+            <text style="fill:#79317F; font-family:'HelveticaNeue-Light'; font-size:14;" class="region_name"></text>
+            <g class="title" transform="translate(25, 28)">
+                <text class="title_recommendation" x="0" y="0" style="fill:#FFFFFF; font-family:'HelveticaNeue-UltraLight'; font-size:12;"> </text>
+                <text class="title_recommendation_name" x="117.144" y="0" style="fill:#DF7627; font-family:'HelveticaNeue-Light'; font-size:12;"> </text>
+                <text class="title_indicator" x="" y="0" style="fill:#6CADDF; font-family:'HelveticaNeue-Light'; font-size:12;"> </text>
+            </g>
+            <g class="description" transform="translate(0, 36)" >
+                <rect width="750" height="35" x="0" y="5" class="recommendation_description" fill="none"/>
+                <!-- <text class="recommendation_description" x="0" y="0" style="fill:#58595B; font-family:'ArialMT'; font-size:7.5;" ></text> -->
+            </g>
+            <g class="" transform="translate(0, -56)">
+                <g class="indicator_button" id="absolute" style="display:none">
+                    <rect x="600.698" y="41.315" width="91.697" height="21.997"/>
+                    <text x="635" y="55" style="fill:#FFFFFF; font-family:'ArialMT'; font-size:7.5;">Absolute</text>
+                </g>
+                <g class="indicator_button indicator_selected" id="target" style="display:none">
+                    <rect x="698.283" y="41.315"  width="91.697" height="21.997"/>
+                    <text x="731" y="55" style="fill:#FFFFFF; font-family:'ArialMT'; font-size:7.5;">Target</text>
+                </g>
+            </g>
+        </g>
+
+        <g class="regions" transform="translate(830, 130)">
+            <rect x="0" y="0" width="94" height="500" fill="#ccc"/>
+            <g class="dashboard_button">
+                <rect width="84" height="21" x="5" y="5" fill="#6CADDf" />
+                <text x="46" y="19" text-anchor="middle">Dashboard</text>
+            </g>
+        </g>
+        <g id="data-chart" display="none" transform="translate(36.47, 180)" />
+        <g class="graphs" transform="translate(36.47, 225)">
+        </g>
+    </g>
+
+    <g id="page3" class="page" transform="translate(15, 70)" style="visibility:hidden;">
+            <g class="" transform="translate(29.5, 5)">
+
+                <g class="dashboard_button">
+                    <rect width="84" height="21" x="5" y="5" fill="#6CADDf" />
+                    <text x="42" y="19" text-anchor="middle">Dashboard</text>
+                </g>
+                <g class="button download_button">
+                    <rect width="84" height="21" x="95" y="5"  />
+                    <text x="137" y="19" text-anchor="middle" fill="#fff">Download</text>
+                </g>
+            </g>
+    </g>
+
+    <g id="hover-box" style="display:none">
+        <rect x="0" y="0" width="180" height="55" fill="#fff" style="stroke-width:2px; stroke:#ddd;" />
+        <text x="90.5" y="20" font-size="12" class="header" text-anchor="middle"> Country Stats</text>
+        <g transform="translate(0, 20)">
+            <g class="ok" transform="translate(5,10)scale(1.4)">
+                <text x="20" y="11"> 33 </text>
+            </g>
+            <g class="fail" transform="translate(70,10)scale(1.4)">
+                <text x="20" y="11"> 44 </text>
+            </g>
+            <g class="nodata" transform="translate(130,10)scale(1.4)">
+                <text x="20" y="11"> 5 </text>
+            </g>
+        </g>
+    </g>
+</svg>
+</div>
+</body>
+
+<script>
+var dashboard = d3.select('#dashboard');
+
+d3.selectAll('.indicator_button').on('click', function(d, i){
+    var name = this.id;
+    if (COIA.graph == name){
+        return;
+    }
+    COIA.graph = name;
+    update_graph_names();
+});
+
+function update_graph_names(){
+    var name = COIA.graph;
+    d3.selectAll('.indicator_button').classed('indicator_selected', false);
+    d3.select('#' + name).classed('indicator_selected', true);
+
+    COIA.graph = name;
+    COIA.graphs = [];
+    var g = dashboard.selectAll('#page2 .graphs')
+                        .selectAll('g.graph').remove();
+
+    remove_graphs();
+    COIA.history();
+}
+
+/**
+ * Someone has clicked a recommendation button, update everything to do with recommendations
+ */
+function update_recommendation(){
+    var index = COIA.recommendations.current;
+    var rec = COIA.recommendations.get();
+
+    dashboard.selectAll('.recommendation').selectAll('g.button')
+        .classed('selected', false);
+
+    dashboard.selectAll(".recommendation-" + index)
+        .classed('selected', true);
+
+
+    // Absolute is only available for recommendation 1.
+    if (index === 0 && (COIA.graph == 'target' || COIA.graph == 'absolute') ){
+        d3.select('#absolute').style('display', 'block');
+        d3.select('#target').style('display', 'block');
+    } else {
+        d3.select('#absolute').style('display', 'none').classed('indicator_selected', false);
+        d3.select('#target').style('display', 'none').classed('indicator_selected', true);
+        if (COIA.graph == 'absolute'){
+            COIA.graph = 'target';
+            COIA.graphs = [];
+            remove_graphs();
+            d3.select('#target').classed('indicator_selected', true);
+        }
+    }
+
+    dashboard.selectAll('div').remove();
+    if (rec === undefined){
+        dashboard.select('.title_recommendation').text('Data Availability');
+        dashboard.select('.title_recommendation_name').text('');
+    }else {
+
+        var text = dashboard.select('.title_recommendation')
+        text.text(rec.name + '|');
+        // move the indicator text across if the recommendation is too big.
+        bbox = text.node().getBBox()
+        dashboard.select('.title_recommendation_name').attr('x', bbox.width + 5).text(rec.title);
+
+
+        insert_text(d3.select('.recommendation_description'), rec.description, 'summary');
+    }
+
+}
+
+function update_regions(){
+    dashboard.selectAll('.region_button')
+        .classed('selected', false);
+
+    dashboard.selectAll('.region-' + COIA.regions.current)
+        .classed('selected', true);
+
+    var region = COIA.regions.get();
+    if (region !== undefined){
+        dashboard.selectAll('.region_name').text(region.name);
+    }
+
+}
+
+
+function render_graphs(){
+
+    if (COIA.graph == 'data'){
+        d3.select('#data-chart').style('display', 'block');
+        return COIA.build_data_chart();
+    }
+
+    d3.select('#data-chart').style('display', 'none');
+
+    var url = COIA.get_json_url();
+    if ( url === undefined){ return; }
+
+
+    d3.json(url, function(o){
+        if (COIA.graph == 'target'){
+            target_graphs(o);
+        } else if (COIA.graph == 'absolute'){
+            absolute_graphs(o);
+        }
+    });
+
+}
+
+function format_dp(number, dp){
+    if (dp === undefined){ dp = 2;}
+    return parseFloat(Math.round(number * 100) / 100).toFixed(dp)
+}
+
+function absolute_graphs(json){
+    var g = dashboard.select('#page2 .graphs');
+
+    var bw;
+    if (COIA.graphs.length === 0){
+        g.selectAll('.graph').remove()
+        g.append('g').attr('id', 'absolute-bw').attr('class', 'graph');
+        g.append('g').attr('id', 'absolute-graph').attr('class', 'graph');
+
+        g.append('g').attr('id', 'absoluteaggregate').attr('class', 'graph aggregate');
+        g.append('g').attr('id', 'absoluteaggregate2').attr('class', 'graph aggregate');
+
+        bw = new BoxWhiskerWidget('#absolute-bw');
+        awA = new AggregateWidget('absoluteaggregate');
+        awB = new AggregateWidget('absoluteaggregate2');
+        COIA.graphs.push(bw);
+        COIA.graphs.push(awA);
+        COIA.graphs.push(awB);
+    } else {
+        bw = COIA.graphs[0];
+        awA = COIA.graphs[1];
+        awB = COIA.graphs[2];
+    }
+    var region = COIA.regions.current;
+    var height;
+    if (region == 6){
+        COIA.graphs = []
+
+        var abw = g.select('#absolute-bw');
+        g.selectAll('.bw-chart').remove();
+        if (g.select('#bwa').empty()){
+            abw.append('g').attr('class', 'graph').attr('id', 'bwa');
+            abw.append('g').attr('class', 'graph').attr('id', 'bwb');
+        }
+
+        bw = new BoxWhiskerWidget('#bwa');
+        bw2 = new BoxWhiskerWidget('#bwb');
+
+        bw.load({'indicators':json.indicators[0], 'indicator': '1.1'})
+        g.select('#bwb').attr('transform', 'translate(0,' + (bw.chart_height + 55) + ')')
+        bw2.load({'indicators':json.indicators[1], 'indicator': '1.2'})
+
+        height = bw.chart_height + bw2.chart_height + 130;
+
+        var avg = [{'total':0, 'count':0}, {'total':0, 'count':0}];
+        for (var i =0; i < json.indicators.length; i++){
+            var ind = json.indicators[i];
+            for (var j = 0; j < ind.length; j ++){
+                avg[i].total += ind[j].q2 * ind[j].num_countries;
+                avg[i].count += ind[j].num_countries;
+            }
+        }
+        var ctx = {
+            'score': format_dp(avg[0].total / avg[0].count),
+            'region': '1.1: ' + COIA.indicator_label['1.1'],
+            'sources': []
+        }
+        awA.load(ctx)
+        i = json.indicators[1];
+        ctx = {
+            'score': format_dp(avg[1].total / avg[1].count),
+            'region': '1.2: ' + COIA.indicator_label['1.2'],
+            'sources': []
+        }
+        awB.load(ctx)
+    }else {
+        bw.load(json)
+        height = bw.chart_height + 75;
+        var i = json.indicators[0];
+        var ctx = {
+            'score': i.q2,
+            'region': i.name,
+            'sources': i.sources
+        }
+        awA.load(ctx)
+        i = json.indicators[1];
+        ctx = {
+            'score': i.q2,
+            'region': i.name,
+            'sources': i.sources
+        }
+        awB.load(ctx)
+    }
+
+
+    g.selectAll('#absoluteaggregate').attr('transform','translate(35, ' + height +')')
+    g.selectAll('#absoluteaggregate2').attr('transform','translate(400, ' + height +')')
+
+    COIA.height(height + 500);
+}
+
+function split_into_africa_world_regions(countries){
+
+    var regions = [[],[]]
+    for (var i =0; i < countries.length; i++){
+        var index = COIA.get_country_region(countries[i].name);
+        if (index === 0){
+            regions[0].push(countries[i]);
+        }else {
+            regions[1].push(countries[i]);
+        }
+    }
+    return regions
+}
+
+function target_graphs(json){
+    if (json == null){ return; }
+    var g = dashboard.select('#page2 .graphs');
+    var tg, tgb;
+
+    if (COIA.graphs.length === 0){
+        g.append('g').attr('id', 'target-table').attr('class', 'graph');
+        g.append('g').attr('id', 'target-tableb').attr('class', 'graph');
+        g.append('g').attr('id', 'target-summary').attr('class', 'graph');
+        tg = new TableWidget('#target-table');
+        tgb = new TableWidget('#target-tableb');
+
+        COIA.graphs.push(tg);
+        COIA.graphs.push(tgb);
+    }else {
+        tg = COIA.graphs[0];
+        tgb= COIA.graphs[1];json
+    }
+    var indicator_height = Math.floor(json.indicators.length / 4) * 235 + 235;
+    var ttb = g.select('#target-tableb');
+    if (COIA.regions.current == 6){
+        var ctx_africa = {'title':'Africa', 'indicators':[]};
+        var ctx_world = {'title':'Rest of the World', 'indicators':[]};
+        for (var i =0; i < json.indicators.length; i++){
+            var indicator = json.indicators[i];
+            var countries = split_into_africa_world_regions(indicator.countries);
+
+            var ind_africa = {
+                'indicator': indicator.indicator,
+                'target': indicator.target,
+                'sources': [],
+                'countries': countries[0]
+            };
+            ctx_africa.indicators.push(ind_africa);
+
+            var ind_world = {
+                'indicator': indicator.indicator,
+                'target': indicator.target,
+                'sources': indicator.sources,
+                'countries': countries[1]
+            };
+            ctx_world.indicators.push(ind_world);
+        }
+
+        tg.load(ctx_africa);
+        tgb.load(ctx_world);
+
+        ttb.attr('transform', 'translate(0,' + (indicator_height + tg.chart_height + 75) + ')').style('display', 'block');
+    }else {
+        ttb.style('display', 'none');
+        tg.load(json);
+    }
+
+    g.select('#target-table').attr('transform', 'translate(0, ' + indicator_height + ')');
+
+
+    var graph = g.selectAll('#target-summary').selectAll('g.graph').data(json.indicators);
+    var l = json.indicators.length;
+    var width = 975;
+    var xoff = width / (l + 1);
+
+    var transform_func = function(d, i){
+        var per_row = 4;
+        var x;
+
+        if (l >= per_row){
+            x = (i % per_row) * 198;
+        }else {
+            x = (i  % per_row + 1) * xoff - 200;
+        }
+
+        var y = Math.floor(i / per_row) * 235;
+
+        return 'translate(' +  x + ',' + y + ')';
+    }
+
+    graph
+        .enter()
+        .append('g')
+        .attr('transform', transform_func)
+        .attr('class', function(d, i){ return 'graph graph-' + i; })
+        .style('opacity', 0)
+
+    graph.transition()
+        .duration( COIA.transition_time)
+        .style('opacity', 1)
+        .attr('transform', transform_func);
+
+    graph.exit()
+        .transition()
+        .duration(COIA.transition_time)
+        .style('opacity', 0)
+        .remove();
+
+
+    for (var i =0; i < json.indicators.length; i++){
+        var sw;
+        var index = i + 2;
+        if (COIA.graphs[index] === undefined){
+            sw = new SummaryWidget('#page2 .graph-' + i);
+            COIA.graphs[index] = sw;
+        } else {
+            sw = COIA.graphs[index];
+        }
+        sw.load(json.indicators[i]);
+    }
+    var h = 600 + COIA.graphs[0].chart_height + Math.floor(json.indicators.length / 4) * 235;
+    if (COIA.regions.current == 6) {
+        h += COIA.graphs[1].chart_height + 55;
+    }
+
+    COIA.height(h);
+}
+
+
+function build_indicator(id, value){
+    var w = 58;
+    var h = 16;
+
+    var n = d3.select('#node' + id);
+    n.text(''); // empty out old data
+
+    // NULL is NO DATA according to tim!
+    if (value == 'NULL'){
+        value = 'NO DATA';
+    }
+
+    n.append('rect').attr('width', w).attr('height', h)
+            .attr('fill', '#6CADDF');
+
+    if (value == 'YES'){
+        n.select('rect').attr('fill', '#E6E7E8');
+        n.append('rect').attr('width', w / 2).attr('height', h)
+            .attr('x', w / 2)
+            .attr('fill', '#8DC63F');
+    } else if ( value == 'NO'){
+        n.select('rect').attr('fill', '#E6E7E8');
+        n.append('rect').attr('width', w / 2).attr('height', h)
+            .attr('fill', '#C61D23');
+    } else if (value == 'NO DATA'){
+        n.select('rect').attr('fill', '#EBD417')
+    } else {
+        if (value.indexOf('%')  == -1){
+            value = value + '%';
+        }
+    }
+
+
+    n.append('text').attr('x', w / 2).attr('y', h / 2)
+        .attr('fill', '#fff')
+        .attr('dy', '0.35em').attr('text-anchor', 'middle').text(value);
+
+
+    if (value == 'NO'){
+        n.select('text').attr('x', w / 4);
+    }else if (value === 'YES'){
+        n.select('text').attr('x', w / 4 * 3)
+    }
+}
+
+
+
+
+function remove_graphs(){
+    dashboard.selectAll('#page2 .graphs')
+            .selectAll('g.graph')
+            .transition()
+            .duration(COIA.transition_time / 2)
+            .style('opacity', 0)
+            .transition()
+            .delay(COIA.transition_time / 2)
+            .remove();
+
+    COIA.graphs = [];
+    return;
+}
+
+
+d3.selectAll(".dashboard_button").on('click', function(){
+    History.pushState({"graph":"dashboard"},"dashboard","?p=dashboard");
+})
+
+d3.selectAll(".download_button").on('click', function(e){
+    var index = d3.select(this).attr('country');
+    var url = 'output/' + index +'.pdf';
+    console.log('url', url);
+    window.open(url,'Download');
+});
+
+d3.selectAll("#data_analysis").on('click', function(e){
+    remove_graphs();
+
+    COIA.switch_page(2);
+    COIA.regions.set(6);
+    COIA.recommendations.set(undefined);
+
+    COIA.graph = 'data';
+    COIA.history();
+});
+
+
+</script>
+</html>

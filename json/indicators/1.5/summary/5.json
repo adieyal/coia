@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "World Health Statistics 2012"}], "region": "Eastern Mediterranean Region", "target": "60", "indicator": "1.5", "scores": {"not_achieved_target": {"value": 20.0, "countries": 2}, "achieved_target": {"value": 10.0, "countries": 1}, "no_data": {"value": 70.0, "countries": 7}}}]

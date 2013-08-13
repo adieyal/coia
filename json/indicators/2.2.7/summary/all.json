@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Countdown/WHO/UNICEF"}], "region": "All regions", "target": "Y", "indicator": "2.2.7", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 97.0, "countries": 73}, "no_data": {"value": 3.0, "countries": 2}}}]

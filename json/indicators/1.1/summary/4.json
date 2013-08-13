@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "MICS 2006/Childinfo"}, {"id": 2, "name": "DHS 2006/Childinfo"}, {"id": 3, "name": "MICS 2005/Childinfo"}], "region": "European Region", "target": "75", "indicator": "1.1", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 100.0, "countries": 5}, "no_data": {"value": 0.0, "countries": 0}}}]

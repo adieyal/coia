@@ -1,0 +1,1 @@
+[{"sources": [{"id": 1, "name": "Countdown/UNICEF/UNAIDS/WHO"}], "region": "Western Pacific Region", "target": "Y", "indicator": "2.2.3", "scores": {"not_achieved_target": {"value": 0.0, "countries": 0}, "achieved_target": {"value": 14.0, "countries": 1}, "no_data": {"value": 86.0, "countries": 6}}}]
